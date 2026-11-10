@@ -1,0 +1,17 @@
+{
+  "name": "after-party-mu-pool-party",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "better-sqlite3": "^12.4.1",
+    "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "qrcode": "^1.5.4",
+    "dotenv": "^17.2.3",
+    "pg": "^8.16.3"
+  }
+}
