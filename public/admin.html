@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Panel | After Party Mu Pool Party</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+<div id="loginView" class="login-wrap">
+  <form id="loginForm" class="glass login-card">
+    <div class="brand big"><span>After</span> <b>Party</b><small>Mu Pool Party</small></div>
+    <h2>🔐 Admin Login</h2><p>Manage your party website from one place.</p>
+    <input id="username" placeholder="Username" required>
+    <input id="password" type="password" placeholder="Password" required>
+    <button class="btn primary">Login</button><div id="loginError" class="error"></div>
+  </form>
+</div>
+
+<div id="dashboard" class="dashboard hidden">
+  <aside class="sidebar">
+    <div class="brand"><span>After</span> <b>Party</b><small>Mu Pool Party</small></div>
+    <button class="side active" data-section="overview">🏠 Dashboard</button>
+    <button class="side" data-section="website">✏️ Edit Website</button>
+    <button class="side" data-section="tickets">🎟 Manage Tickets</button>
+    <button class="side" data-section="messages">💬 Chat Messages</button><button class="side" data-section="users">👥 Users</button>
+    <button class="side" data-section="gallery">🖼 Gallery</button>
+    <button class="side" data-section="settings">⚙️ Settings</button>
+    <button class="side" id="logout">↪ Logout</button>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-top"><div><h1>Admin Panel</h1><p>Manage your party website with ease.</p></div><a class="btn ghost" href="index.html" target="_blank">👁 View Website</a></div>
+
+    <section id="overview" class="admin-section">
+      <div class="stats">
+        <div class="stat green"><b id="total">0</b><span>Total Tickets</span></div>
+        <div class="stat orange"><b id="pending">0</b><span>Pending Tickets</span></div>
+        <div class="stat blue"><b id="approved">0</b><span>Approved Tickets</span></div>
+        <div class="stat red"><b id="used">0</b><span>Used Tickets</span></div>
+      </div>
+      <div class="admin-grid">
+        <div class="glass panel"><h2>📈 Ticket Sales Overview</h2><div class="fake-chart"><i style="height:30%"></i><i style="height:45%"></i><i style="height:52%"></i><i style="height:65%"></i><i style="height:78%"></i><i style="height:92%"></i><i style="height:70%"></i></div></div>
+        <div class="glass panel"><h2>⚡ Quick Actions</h2><div class="quick"><button data-go="website">✏️ Edit Event Info</button><button data-go="gallery">🖼 Update Gallery</button><button data-go="tickets">🎟 Manage Tickets</button><a href="index.html" target="_blank">↗ View Website</a></div></div>
+      </div>
+    </section>
+
+    <section id="website" class="admin-section hidden">
+      <div class="glass panel"><h2>✏️ Edit Website Content</h2><form id="settingsForm" class="edit-grid">
+        <label>Event Title<input name="event_name" required></label>
+        <label>Event Date<input name="event_date" required></label>
+        <label>Venue<input name="venue" required></label>
+        <label>Ticket Price<input name="ticket_price" required></label>
+        <label>Payment Number<input name="payment_number" required></label>
+        <label>Tagline<input name="tagline" required></label>
+        <div class="form-actions"><button class="btn primary">💾 Save Changes</button><a class="btn ghost" href="index.html" target="_blank">👁 Preview Site</a></div>
+      </form><div id="saveMessage"></div></div>
+    </section>
+
+    <section id="tickets" class="admin-section hidden">
+      <div class="glass panel"><div class="row"><h2>🎟 Manage Tickets</h2><button class="btn ghost" id="refreshTickets">Refresh</button></div><div class="table-wrap"><table><thead><tr><th>Name</th><th>Phone</th><th>Payment Ref</th><th>Ticket</th><th>Status</th><th>Action</th></tr></thead><tbody id="ticketRows"></tbody></table></div></div>
+    </section>
+
+    <section id="messages" class="admin-section hidden"><div class="glass panel"><h2>💬 Chat Messages</h2><div id="adminMessages"></div></div></section><section id="users" class="admin-section hidden"><div class="glass panel"><h2>👥 Registered Users</h2><div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Joined</th></tr></thead><tbody id="userRows"></tbody></table></div></div></section>
+    <section id="gallery" class="admin-section hidden"><div class="glass panel"><h2>🖼 Gallery</h2><p>Gallery management area ready for image uploads in the next version.</p></div></section>
+    <section id="settings" class="admin-section hidden"><div class="glass panel"><h2>⚙️ Settings</h2><p>Admin account and website settings can be managed here.</p></div></section>
+  </main>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
